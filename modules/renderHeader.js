@@ -1,5 +1,5 @@
 
-const renderHeader = selectData => {
+const renderHeader = () => {
   const container = document.createElement('div');
   const nav = document.createElement('nav');
   const form = document.createElement('form');
@@ -20,9 +20,14 @@ form.insertAdjacentHTML('beforeend', `
   </button>
   </div>
   <select class="form__select" name="select">
-    <option value="sport">sport</option> 
-    <option value="business">business</option> 
-    <option value="science">science</option> 
+    <option value="ru">Россия</option> 
+    <option value="us">USA</option> 
+    <option value="jp">Japan</option> 
+    <option value="de">Germany</option> 
+    <option value="fr">France</option> 
+    <option value="it">Italia</option> 
+    <option value="lt">Lithuania</option> 
+    <option value="tr">Türkiye</option> 
   </select>
 `);
 

@@ -49,9 +49,15 @@ const renderArticles = (err, data, count, img, search) => {
     const dateTime = new Date(publishedAt);
     const date = dateTime.toLocaleDateString();
     const time = dateTime.toLocaleTimeString().slice(0, -3);
+
     author = author ?? '';
     description = description ?? '';
 
+    const image = document.createElement('img');
+    image.className = 'article__image';
+    image.src = 'img/no_photo.jpg';
+    
+    const images = img[i] ?? image;
     const card = document.createElement('div');
     card.className = 'wrapper__news card-news';
     const article = document.createElement('article');
@@ -68,7 +74,7 @@ const renderArticles = (err, data, count, img, search) => {
         <p class="article__description">${description}</p>
       </header>
       `);
-    article.append(img[i]);
+    article.append(images);
     article.insertAdjacentHTML('beforeend', `
       <footer class="article__footer">
         <p class="article__wrapper-text">

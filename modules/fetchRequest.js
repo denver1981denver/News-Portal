@@ -1,6 +1,6 @@
 import showImg from './loadImages.js';
 
-const fetchRequest = async (postfix = 'business', URL, {
+const fetchRequest = async (postfix, URL, {
   method = 'get',
   callback,
   headers,

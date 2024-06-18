@@ -1,4 +1,4 @@
-const formControl = (form, header, main, footer, initSearch, initSelect) => {
+const formControl = (form, header, main, footer, initSearch, initSelect, preload) => {
   form.addEventListener('change', async ({target}) => {
     const select = target.closest('.form__select');
 
@@ -9,6 +9,7 @@ const formControl = (form, header, main, footer, initSearch, initSelect) => {
       footer.style.display = 'none';
 
       initSelect(dataSelect).then(data => {
+        preload.remove();
         if (data[0]) {
           main.append(data[0]);
           header.style.display = 'block';
@@ -27,6 +28,7 @@ const formControl = (form, header, main, footer, initSearch, initSelect) => {
     footer.style.display = 'none';
 
     initSearch(search, select).then(data => {
+      preload.remove();
       if (data[0]) main.append(data[0]);
       if (data[1]) {
         main.append(data[1]);
